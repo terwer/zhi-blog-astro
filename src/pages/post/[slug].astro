@@ -3,12 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import Env from "zhi-env";
 import ZhiUtil from "../../utils/zhiUtil";
 
-const { slug } = Astro.params;
+const {slug} = Astro.params;
 
 const env = new Env(import.meta.env)
 const zhiSdk = ZhiUtil.zhiSdk(env)
 const blogApi = zhiSdk.blogApi
-const post = await blogApi.getPost(slug)
+const postid = slug.includes(".html") ? slug.replace(".html", "") : slug
+const post = await blogApi.getPost(postid)
 
 // The getStaticPaths() is required for static Astro sites.
 // If using SSR, you will not need this function.
@@ -26,12 +27,12 @@ const post = await blogApi.getPost(slug)
 ---
 
 <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 
 <Layout title="Welcome to Astro.">
-  <article>
-    <h1 set:html={post.title} />
-    <Fragment set:html={post.description} />
-  </article>
+    <article>
+        <h1 set:html={post.title}/>
+        <Fragment set:html={post.description}/>
+    </article>
 </Layout>
