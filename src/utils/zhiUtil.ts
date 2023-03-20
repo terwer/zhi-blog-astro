@@ -45,9 +45,9 @@ class ZhiUtil {
     public static zhiSdk(env: Env) {
         if (!ZhiUtil.zhiSdkObj) {
             ZhiUtil.zhiSdkObj = new ZhiSdk(env, {
-                baseUrl: import.meta.env.VITE_SIYUAN_API_URL,
-                token: import.meta.env.VITE_SIYUAN_AUTH_TOKEN,
-                middlewareUrl: import.meta.env.VITE_MIDDLEWARE_URL
+                baseUrl: import.meta.env.VITE_SIYUAN_API_URL ?? process.env.VITE_SIYUAN_API_URL,
+                token: import.meta.env.VITE_SIYUAN_AUTH_TOKEN ?? process.env.VITE_SIYUAN_AUTH_TOKEN,
+                middlewareUrl: import.meta.env.VITE_MIDDLEWARE_URL ?? process.env.VITE_MIDDLEWARE_URL
             });
             const logger = ZhiUtil.zhiSdkObj.getLogger();
             const common = ZhiUtil.zhiSdkObj.common;
