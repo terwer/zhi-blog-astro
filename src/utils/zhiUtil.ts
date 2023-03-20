@@ -25,7 +25,6 @@
 
 import ZhiSdk from "zhi-sdk";
 import type Env from "zhi-env";
-import {SiyuanConfig} from "zhi-sdk";
 
 /**
  * 工具类统一入口
@@ -44,23 +43,20 @@ class ZhiUtil {
      */
     public static zhiSdk(env: Env) {
         if (!ZhiUtil.zhiSdkObj) {
-            // ZhiUtil.zhiSdkObj = new ZhiSdk(env, {
-            //     baseUrl: import.meta.env.VITE_SIYUAN_API_URL ?? process.env.VITE_SIYUAN_API_URL,
-            //     token: import.meta.env.VITE_SIYUAN_AUTH_TOKEN ?? process.env.VITE_SIYUAN_AUTH_TOKEN,
-            //     middlewareUrl: import.meta.env.VITE_MIDDLEWARE_URL ?? process.env.VITE_MIDDLEWARE_URL
-            // });
             ZhiUtil.zhiSdkObj = new ZhiSdk(env, {
-                baseUrl: process.env.VITE_SIYUAN_API_URL,
-                token: process.env.VITE_SIYUAN_AUTH_TOKEN,
-                middlewareUrl: process.env.VITE_MIDDLEWARE_URL
+                baseUrl: process.env.VITE_SIYUAN_API_URL ?? import.meta.env.VITE_SIYUAN_API_URL,
+                token: process.env.VITE_SIYUAN_AUTH_TOKEN ?? import.meta.env.VITE_SIYUAN_AUTH_TOKEN,
+                // middlewareUrl: process.env.VITE_MIDDLEWARE_URL ?? import.meta.env.VITE_MIDDLEWARE_URL
             });
-            const logger = ZhiUtil.zhiSdkObj.getLogger();
-            const common = ZhiUtil.zhiSdkObj.common;
-            logger.debug(
-                common.strUtil.f(
-                    "ZhiSdk inited, components are available now, like logger, env and so on."
-                )
-            );
+            console.log(process.env.VITE_SIYUAN_API_URL)
+            console.log(process.env.VITE_SIYUAN_AUTH_TOKEN)
+            // const logger = ZhiUtil.zhiSdkObj.getLogger();
+            // const common = ZhiUtil.zhiSdkObj.common;
+            // logger.debug(
+            //     common.strUtil.f(
+            //         "ZhiSdk inited, components are available now, like logger, env and so on."
+            //     )
+            // );
         }
         return ZhiUtil.zhiSdkObj;
     }
