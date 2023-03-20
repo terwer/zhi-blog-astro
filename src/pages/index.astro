@@ -6,9 +6,7 @@ import Env from "zhi-env";
 const env = new Env(import.meta.env)
 const zhiSdk = ZhiUtil.zhiSdk(env)
 const blogApi = zhiSdk.blogApi
-console.log(111111111)
 const posts = await blogApi.getRecentPosts(10)
-console.log(posts)
 ---
 
 <Layout title="Welcome to Astro.">
