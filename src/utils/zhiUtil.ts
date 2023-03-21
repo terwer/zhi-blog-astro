@@ -43,14 +43,39 @@ class ZhiUtil {
    */
   private static getAstroEnv() {
     const envMeta = import.meta.env
+
+    let customEnv = {
+      NODE_ENV: "development",
+      VITE_DEBUG_MODE: false,
+      VITE_LOG_LEVEL: "DEBUG",
+      VITE_LOG_PREFIX: "custom-log",
+      VITE_SIYUAN_API_URL: "http://127.0.0.1:6806",
+      VITE_SIYUAN_AUTH_TOKEN: "",
+    }
+
+    // if(typeof window == "undefined"){
+    customEnv = {
+      NODE_ENV: envMeta.MODE ?? "development",
+      VITE_DEBUG_MODE: (envMeta.VITE_DEBUG_MODE ?? "false") === "true",
+      VITE_LOG_LEVEL: envMeta.VITE_LOG_LEVEL ?? "DEBUG",
+      VITE_LOG_PREFIX: envMeta.VITE_LOG_PREFIX ?? "custom-log",
+      VITE_SIYUAN_API_URL: envMeta.VITE_SIYUAN_API_URL ?? "http://127.0.0.1:6806",
+      VITE_SIYUAN_AUTH_TOKEN: envMeta.VITE_SIYUAN_AUTH_TOKEN ?? "",
+    }
+    // }else{
+    //   customEnv = {
+    //     NODE_ENV: process?.env.MODE ?? envMeta.MODE ?? "development",
+    //     VITE_DEBUG_MODE: (process?.env.VITE_DEBUG_MODE ?? envMeta.VITE_DEBUG_MODE ?? "false") === "true",
+    //     VITE_LOG_LEVEL: process?.env.VITE_LOG_LEVEL ?? envMeta.VITE_LOG_LEVEL ?? "DEBUG",
+    //     VITE_LOG_PREFIX: process?.env.VITE_LOG_PREFIX ?? envMeta.VITE_LOG_PREFIX ?? "custom-log",
+    //     VITE_SIYUAN_API_URL: process?.env.VITE_SIYUAN_API_URL ?? envMeta.VITE_SIYUAN_API_URL ?? "http://127.0.0.1:6806",
+    //     VITE_SIYUAN_AUTH_TOKEN:process?.env.VITE_SIYUAN_AUTH_TOKEN ?? envMeta.VITE_SIYUAN_AUTH_TOKEN ?? ""
+    //   }
+    // }
+
     return new Env({
       ...envMeta,
-      NODE_ENV: process.env.MODE ?? envMeta.MODE ?? "development",
-      VITE_DEBUG_MODE: (process.env.VITE_DEBUG_MODE ?? envMeta.VITE_DEBUG_MODE ?? "false") === "true",
-      VITE_LOG_LEVEL: process.env.VITE_LOG_LEVEL ?? envMeta.VITE_LOG_LEVEL ?? "DEBUG",
-      VITE_LOG_PREFIX: process.env.VITE_LOG_PREFIX ?? envMeta.VITE_LOG_PREFIX ?? "custom-log",
-      VITE_SIYUAN_API_URL: process.env.VITE_SIYUAN_API_URL ?? envMeta.VITE_SIYUAN_API_URL ?? "http://127.0.0.1:6806",
-      VITE_SIYUAN_AUTH_TOKEN: process.env.VITE_SIYUAN_AUTH_TOKEN ?? envMeta.VITE_SIYUAN_AUTH_TOKEN ?? ""
+      ...customEnv,
     })
   }
 
@@ -63,7 +88,12 @@ class ZhiUtil {
       ZhiUtil.zhiSdkObj = new ZhiSdk(env)
       const logger = ZhiUtil.zhiSdkObj.getLogger()
       const common = ZhiUtil.zhiSdkObj.common
-      logger.debug(common.strUtil.f("ZhiSdk inited, components are available now, like logger, env and so on.[Debug mode->{0}]", env.isNodeDev()))
+      logger.debug(
+        common.strUtil.f(
+          "ZhiSdk inited, components are available now, like logger, env and so on.[Debug mode->{0}]",
+          env.isNodeDev()
+        )
+      )
     }
     return ZhiUtil.zhiSdkObj
   }

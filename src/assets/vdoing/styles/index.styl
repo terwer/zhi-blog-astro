@@ -1,17 +1,23 @@
 // 字体图标
-@import "../fonts/font-vdoing"
+@require "../fonts/font-vdoing"
 // 网页字体
-@import "../fonts/webfont"
-
-@require "./palette"
+@require "../fonts/webfont"
+// 主题配置
 @require "./config"
+// 代码
 @require "./code"
+// 代码块
 @require "./custom-blocks"
+// 箭头
 @require "./arrow"
+// 包装器
 @require "./wrapper"
+// 目录
 @require "./toc"
+// 容器
 @require "./markdown-container"
-
+// 移动端
+@require "./mobile"
 
 html, body
   padding 0
@@ -25,6 +31,9 @@ body
   font-size 16px
   color $textColor
   background var(--bodyBg)
+  .main
+    margin-top 3.5rem
+
 
 // 去掉黄色边框
 a,input,button

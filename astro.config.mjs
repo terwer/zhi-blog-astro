@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config"
 import vue from "@astrojs/vue"
 import vercel from "@astrojs/vercel/serverless"
-import path from "path"
 
 // https://astro.build/config
 export default defineConfig({
