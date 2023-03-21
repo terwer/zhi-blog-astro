@@ -23,8 +23,8 @@
  * questions.
  */
 
-import ZhiSdk from "zhi-sdk";
-import type Env from "zhi-env";
+import ZhiSdk from "zhi-sdk"
+import Env from "zhi-env"
 
 /**
  * 工具类统一入口
@@ -34,23 +34,39 @@ import type Env from "zhi-env";
  * @since 1.0.0
  */
 class ZhiUtil {
-    private static zhiSdkObj: ZhiSdk;
+  private static zhiSdkObj: ZhiSdk
 
-    /**
-     * 获取 zhi-sdk 实例
-     *
-     * @param env - 环境变量对象
-     */
-    public static zhiSdk(env: Env) {
-        if (!ZhiUtil.zhiSdkObj) {
-            ZhiUtil.zhiSdkObj = new ZhiSdk(env, {
-                baseUrl: process.env.VITE_SIYUAN_API_URL ?? import.meta.env.VITE_SIYUAN_API_URL,
-                token: process.env.VITE_SIYUAN_AUTH_TOKEN ?? import.meta.env.VITE_SIYUAN_AUTH_TOKEN,
-                // middlewareUrl: process.env.VITE_MIDDLEWARE_URL ?? import.meta.env.VITE_MIDDLEWARE_URL
-            });
-        }
-        return ZhiUtil.zhiSdkObj;
+  /**
+   * 获取 Astro 环境变量
+   *
+   * @private
+   */
+  private static getAstroEnv() {
+    const envMeta = import.meta.env
+    return new Env({
+      ...envMeta,
+      NODE_ENV: process.env.MODE ?? envMeta.MODE ?? "development",
+      VITE_DEBUG_MODE: (process.env.VITE_DEBUG_MODE ?? envMeta.VITE_DEBUG_MODE ?? "false") === "true",
+      VITE_LOG_LEVEL: process.env.VITE_LOG_LEVEL ?? envMeta.VITE_LOG_LEVEL ?? "DEBUG",
+      VITE_LOG_PREFIX: process.env.VITE_LOG_PREFIX ?? envMeta.VITE_LOG_PREFIX ?? "custom-log",
+      VITE_SIYUAN_API_URL: process.env.VITE_SIYUAN_API_URL ?? envMeta.VITE_SIYUAN_API_URL ?? "http://127.0.0.1:6806",
+      VITE_SIYUAN_AUTH_TOKEN: process.env.VITE_SIYUAN_AUTH_TOKEN ?? envMeta.VITE_SIYUAN_AUTH_TOKEN ?? ""
+    })
+  }
+
+  /**
+   * 获取 zhi-sdk 实例
+   */
+  public static zhiSdk() {
+    if (!ZhiUtil.zhiSdkObj) {
+      const env = ZhiUtil.getAstroEnv()
+      ZhiUtil.zhiSdkObj = new ZhiSdk(env)
+      const logger = ZhiUtil.zhiSdkObj.getLogger()
+      const common = ZhiUtil.zhiSdkObj.common
+      logger.debug(common.strUtil.f("ZhiSdk inited, components are available now, like logger, env and so on.[Debug mode->{0}]", env.isNodeDev()))
     }
+    return ZhiUtil.zhiSdkObj
+  }
 }
 
-export default ZhiUtil;
+export default ZhiUtil

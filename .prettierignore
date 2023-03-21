@@ -1,0 +1,8 @@
+# platform
+.vercel
+.vscode
+.idea
+
+# Ignore artifacts:
+dist
+node_modules
