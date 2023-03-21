@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div class="blogger" v-if="computes.blogger">
-      <img :src="computes.blogger.value.avatar"  alt=""/>
+      <img :src="computes.blogger.value.avatar" alt="" />
       <div class="blogger-info">
         <h3>{{ computes.blogger.value.name }}</h3>
 

@@ -88,24 +88,24 @@
   color: $accentColor;
 }
 .theme-mode-dark .custom-block.warning {
-  background-color: rgba(255,247,208,0.2);
+  background-color: rgba(255, 247, 208, 0.2);
   color: #e7c000;
 }
 .theme-mode-dark .custom-block.warning .custom-block-title {
   color: #ffdc2f;
 }
 .theme-mode-dark .custom-block.tip {
-  background-color: rgba(243,245,247,0.2);
+  background-color: rgba(243, 245, 247, 0.2);
   color: #42b983;
 }
 .theme-mode-dark .custom-block.danger {
-  background-color: rgba(255,230,230,0.4);
+  background-color: rgba(255, 230, 230, 0.4);
   color: #800000;
 }
 .theme-mode-dark .custom-block.danger a {
   color: $accentColor;
 }
 .theme-mode-dark .custom-block.note {
-  background-color: rgba(243,245,247,0.2);
+  background-color: rgba(243, 245, 247, 0.2);
   color: #157bae;
 }

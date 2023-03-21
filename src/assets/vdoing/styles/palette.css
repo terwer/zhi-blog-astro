@@ -1,23 +1,23 @@
 .theme-mode-light {
   --bodyBg: #f4f4f4;
   --mainBg: #fff;
-  --sidebarBg: rgba(255,255,255,0.8);
-  --blurBg: rgba(255,255,255,0.9);
+  --sidebarBg: rgba(255, 255, 255, 0.8);
+  --blurBg: rgba(255, 255, 255, 0.9);
   --customBlockBg: #f1f1f1;
   --textColor: #00323c;
   --textLightenColor: #0085ad;
-  --borderColor: rgba(0,0,0,0.12);
+  --borderColor: rgba(0, 0, 0, 0.12);
   --codeBg: #f6f6f6;
   --codeColor: #525252;
-/* Code blocks */
-/* Inline code */
+  /* Code blocks */
+  /* Inline code */
 }
 .theme-mode-light code[class*="language-"],
 .theme-mode-light pre[class*="language-"] {
   color: #000;
   background: none;
   text-shadow: 0 1px #fff;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -102,7 +102,7 @@
 .theme-mode-light .language-css .token.string,
 .theme-mode-light .style .token.string {
   color: #9a6e3a;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 .theme-mode-light .token.atrule,
 .theme-mode-light .token.attr-value,
@@ -129,31 +129,31 @@
   cursor: help;
 }
 .theme-mode-light div[class*="language-"] .highlight-lines .highlighted {
-  background-color: rgba(200,200,200,0.4);
+  background-color: rgba(200, 200, 200, 0.4);
 }
 .theme-mode-light div[class*="language-"].line-numbers-mode .highlight-lines .highlighted:before {
-  background-color: rgba(200,200,200,0.4);
+  background-color: rgba(200, 200, 200, 0.4);
 }
 .theme-mode-dark {
   --bodyBg: #27272b;
   --mainBg: #1e1e22;
-  --sidebarBg: rgba(30,30,34,0.8);
-  --blurBg: rgba(30,30,34,0.8);
+  --sidebarBg: rgba(30, 30, 34, 0.8);
+  --blurBg: rgba(30, 30, 34, 0.8);
   --customBlockBg: #27272b;
   --textColor: #9b9baa;
   --textLightenColor: #0085ad;
   --borderColor: #30363d;
   --codeBg: #252526;
   --codeColor: #fff;
-/* Code blocks */
-/* Inline code */
+  /* Code blocks */
+  /* Inline code */
 }
 .theme-mode-dark code[class*="language-"],
 .theme-mode-dark pre[class*="language-"] {
   color: #ccc;
   background: none;
   text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -255,23 +255,23 @@
 .theme-mode-read {
   --bodyBg: #ececcc;
   --mainBg: #f5f5d5;
-  --sidebarBg: rgba(245,245,213,0.8);
-  --blurBg: rgba(245,245,213,0.9);
+  --sidebarBg: rgba(245, 245, 213, 0.8);
+  --blurBg: rgba(245, 245, 213, 0.9);
   --customBlockBg: #ececcc;
   --textColor: #704214;
   --textLightenColor: #963;
-  --borderColor: rgba(0,0,0,0.15);
+  --borderColor: rgba(0, 0, 0, 0.15);
   --codeBg: #282c34;
   --codeColor: #fff;
-/* Code blocks */
-/* Inline code */
+  /* Code blocks */
+  /* Inline code */
 }
 .theme-mode-read code[class*="language-"],
 .theme-mode-read pre[class*="language-"] {
   color: #ccc;
   background: none;
   text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;

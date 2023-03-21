@@ -38,7 +38,7 @@ const datas = reactive({
 })
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @require "../../assets/vdoing/styles/config"
 
 $navbar-vertical-padding = 0.7rem

@@ -55,3 +55,7 @@ onMounted(() => {
   datas.showSidebar = true
 })
 </script>
+
+<style lang="stylus">
+@require "../../assets/vdoing/styles/index"
+</style>

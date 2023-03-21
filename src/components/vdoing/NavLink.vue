@@ -4,7 +4,7 @@
     :href="computes.link.value"
     @focusout="methods.focusoutAction"
     v-if="!VdoingUtil.isExternal(computes.link.value)"
-    >
+  >
     {{ props.item.text }}
   </a>
   <a
