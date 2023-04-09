@@ -97,6 +97,21 @@ dependencies:
   xml2js:
     specifier: ^0.4.23
     version: 0.4.23
+  zhi-blog-api:
+    specifier: ^1.0.1
+    version: 1.0.1
+  zhi-common:
+    specifier: ^1.4.2
+    version: 1.4.2
+  zhi-env:
+    specifier: ^1.12.0
+    version: 1.12.0
+  zhi-log:
+    specifier: ^1.8.0
+    version: 1.8.0
+  zhi-siyuan-api:
+    specifier: ^1.0.2
+    version: 1.0.2
 
 devDependencies:
   '@docusaurus/module-type-aliases':
@@ -4192,6 +4207,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -4201,6 +4217,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -4210,6 +4227,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -4219,6 +4237,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -5012,6 +5031,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -5020,6 +5040,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -5028,6 +5049,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -5036,6 +5058,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -19497,6 +19520,26 @@ packages:
     optionalDependencies:
       commander: 9.5.0
     dev: true
+
+  /zhi-blog-api@1.0.1:
+    resolution: {integrity: sha512-Ops7piqVYe7SDjWDYniuo4dZMnjvjqeer95r2DVbRgBdgH6y4rcdqIWyl2G8FAr2iC+uhxbMo5It3YXT30XrTA==}
+    dev: false
+
+  /zhi-common@1.4.2:
+    resolution: {integrity: sha512-D6shR3/ybdqXhxrD2BvFEMIBHrG8LHMcBOZ8L42lXZ9ls7zHkmW1DDBOkSzGl83UfSzV3OZcy1l1IoF9nzgEzw==}
+    dev: false
+
+  /zhi-env@1.12.0:
+    resolution: {integrity: sha512-Uf7ddgdKOD4KZ7tCcYqQgpbwN8R/bnNX5bFw18wHAW0FQQAU8oJ2i3y1fKCIbq2XmmK4q3yt/F/pFbsm7LaRCQ==}
+    dev: false
+
+  /zhi-log@1.8.0:
+    resolution: {integrity: sha512-Sui3ON0jHZ1bpBkcBfwvj3U4vuxRAJFh1gQ+Cm41KZasObdRkQQSuOODkCxto8mMbae/AhnkYGBgA8Hb7cQCCQ==}
+    dev: false
+
+  /zhi-siyuan-api@1.0.2:
+    resolution: {integrity: sha512-gqZkbQlkg9qupPFhterKrsfF/Zw7JPCKwsTrKaUKodUkuO7ib94DOA3NtRBAO7In0fcKpufcXLTaAHqf0R1puQ==}
+    dev: false
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
