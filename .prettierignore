@@ -1,8 +1,6 @@
-# platform
-.vercel
-.vscode
+.prettierignore
 .idea
-
-# Ignore artifacts:
 dist
 node_modules
+tmp
+tools
