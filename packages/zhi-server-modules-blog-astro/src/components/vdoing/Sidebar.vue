@@ -25,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import NavLinks from "@astroBlog/src/components/vdoing/NavLinks.vue"
-import appConfig from "@astroBlog/src/app.config"
+import NavLinks from "@astroblog/src/components/vdoing/NavLinks.vue"
+import appConfig from "@astroblog/src/app.config"
 import { onBeforeMount, computed, reactive } from "vue"
 
 // props

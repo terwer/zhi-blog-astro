@@ -9,11 +9,11 @@
 </template>
 
 <script lang="ts" setup>
-import Navbar from "@astroBlog/src/components/vdoing/Navbar.vue"
-import ZhiUtil from "@astroBlog/src/utils/zhiUtil"
+import Navbar from "@astroblog/src/components/vdoing/Navbar.vue"
+import ZhiUtil from "@astroblog/src/utils/zhiUtil"
 import { computed, reactive, onMounted } from "vue"
-import appConfig from "@astroBlog/src/app.config"
-import Sidebar from "@astroBlog/src/components/vdoing/Sidebar.vue"
+import appConfig from "@astroblog/src/app.config"
+import Sidebar from "@astroblog/src/components/vdoing/Sidebar.vue"
 
 const logger = ZhiUtil.zhiLog("vdoing-header")
 

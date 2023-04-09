@@ -27,9 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import SidebarButton from "@astroBlog/src/components/vdoing/SidebarButton.vue"
-import appConfig from "@astroBlog/src/app.config"
-import NavLinks from "@astroBlog/src/components/vdoing/NavLinks.vue"
+import SidebarButton from "@astroblog/src/components/vdoing/SidebarButton.vue"
+import appConfig from "@astroblog/src/app.config"
+import NavLinks from "@astroblog/src/components/vdoing/NavLinks.vue"
 import { reactive } from "vue"
 
 // datas

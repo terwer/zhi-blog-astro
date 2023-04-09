@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import last from "lodash"
-import NavLink from "@astroBlog/src/components/vdoing/NavLink.vue"
+import NavLink from "@astroblog/src/components/vdoing/NavLink.vue"
 import { computed, onBeforeMount, reactive } from "vue"
 
 // props

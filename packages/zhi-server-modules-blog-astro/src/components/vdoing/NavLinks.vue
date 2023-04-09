@@ -21,12 +21,12 @@
 </template>
 
 <script setup lang="ts">
-import ZhiUtil from "@astroBlog/src/utils/zhiUtil"
-import OutboundLink from "@astroBlog/src/components/vdoing/OutboundLink.vue"
-import VdoingUtil from "@astroBlog/src/utils/vdoingUtil"
-import NavLink from "@astroBlog/src/components/vdoing/NavLink.vue"
-import DropdownLink from "@astroBlog/src/components/vdoing/DropdownLink.vue"
-import appConfig from "@astroBlog/src/app.config"
+import ZhiUtil from "@astroblog/src/utils/zhiUtil"
+import OutboundLink from "@astroblog/src/components/vdoing/OutboundLink.vue"
+import VdoingUtil from "@astroblog/src/utils/vdoingUtil"
+import NavLink from "@astroblog/src/components/vdoing/NavLink.vue"
+import DropdownLink from "@astroblog/src/components/vdoing/DropdownLink.vue"
+import appConfig from "@astroblog/src/app.config"
 import { computed } from "vue"
 
 const logger = ZhiUtil.zhiLog("vdoing-navlink")

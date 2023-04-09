@@ -25,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import VdoingUtil from "@astroBlog/src/utils/vdoingUtil"
-import OutboundLink from "@astroBlog/src/components/vdoing/OutboundLink.vue"
+import VdoingUtil from "@astroblog/src/utils/vdoingUtil"
+import OutboundLink from "@astroblog/src/components/vdoing/OutboundLink.vue"
 import { computed } from "vue"
 
 const props = defineProps({
