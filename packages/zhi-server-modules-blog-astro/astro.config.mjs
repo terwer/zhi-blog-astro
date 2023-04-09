@@ -6,6 +6,7 @@ import vercel from "@astrojs/vercel/serverless"
 const isDev = process.env.NODE_ENV === "development"
 // const isTest = process.env.NODE_ENV === "test"
 // const isVercelBuild = process.env.BUILD_TYPE === "vercel"
+// default is vercel
 const isVercelBuild = true
 // const isNodeBuild = process.env.BUILD_TYPE === "node"
 console.log("isDev=>", isDev)
